@@ -1,12 +1,67 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.formContainer{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
+.signContainer{
+  padding-bottom: 15px;
+    font-size: larger;
+    font-weight: 500;
+}
+.buttonContainer{
+  border: 2px solid #151514;
+  background-color: aquamarine;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.loginContainer{
+  margin: 20px;
+    border: 1.5px solid black;
+    width: 300px;
+    margin-left: 480px;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+    background: antiquewhite;
+}
+.inputContainer{
+  border: 1.5px solid black;
+    border-radius: 5px;
+    text-align: center;
+    height: 25px;
+}
+.container{
+  width: 300px;
+    border: 1.5px solid;
+    margin-top: 75px;
+    /* text-align: center; */
+    margin-left: 480px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: antiquewhite;
+}
+.homeContainer{
+  margin: 20px;
+    font-weight: 500;
+    font-size: xxx-large;
+}
+.homeButton{
+  background: antiquewhite;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+.loginLink{
+  color: blue;
+    font-weight: 700;
+    font-size: 21px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
