@@ -12,7 +12,7 @@ const Loginfiller = () => {
         signInWithEmailAndPassword(database,email,password).then(data => {
             history('/home');
         }).catch(err => {
-            alert(err.code);
+            alert(err.message);
         })
     }
   return (
@@ -27,6 +27,9 @@ const Loginfiller = () => {
     </div>
     <div className='loginContainer'>
             Don't have an account? <Link to='/'><span className='loginLink'>Register</span></Link>
+        </div>
+        <div>
+            <Link to='/forgotPassword'>Forgot Password?</Link>
         </div>
     </div>
   )
