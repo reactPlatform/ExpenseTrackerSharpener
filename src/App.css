@@ -86,6 +86,50 @@
   margin-right: 38px;
   padding-bottom: 8px;
 }
+.contactContainer{
+  margin-top: 10%;
+    border: 2.5px groove sandybrown;
+    padding-bottom: 25px;
+    width: 50%;
+    position: relative;
+    left: 25%;
+    border-radius: 10px;
+}
+.fullNameContainer{
+  display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.profilePhotoContainer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 30px;
+    padding-top: 20px;
+}
+.labelDesign{
+  font-size: 20px;
+    font-style: italic;
+    font-family: auto;
+}
+.inputFieldContainer{
+  border: 2px groove sandybrown;
+  border-radius: 5px;
+}
+.profileUpdateButton{
+  margin-top: 30px;
+    border: 2px groove sandybrown;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.profileButtonContainer{
+  display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
