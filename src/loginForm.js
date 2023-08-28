@@ -10,6 +10,7 @@ const Loginfiller = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         signInWithEmailAndPassword(database,email,password).then(data => {
+            debugger
             history('/home');
         }).catch(err => {
             alert(err.message);
