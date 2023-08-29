@@ -27,7 +27,7 @@ const Loginfiller = () => {
         </form>
     </div>
     <div className='loginContainer'>
-            Don't have an account? <Link to='/'><span className='loginLink'>Register</span></Link>
+            Don't have an account? <Link to='/signup'><span className='loginLink'>Register</span></Link>
         </div>
         <div>
             <Link to='/forgotPassword'>Forgot Password?</Link>

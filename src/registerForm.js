@@ -42,7 +42,7 @@ const RegisterForm = () => {
         </form>
     </div>
     <div className='loginContainer'>
-            Have an account? <Link to='/login'><span className='loginLink'>Login</span></Link>
+            Have an account? <Link to='/'><span className='loginLink'>Login</span></Link>
         </div>
     </div>
   )
