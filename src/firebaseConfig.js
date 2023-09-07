@@ -2,13 +2,15 @@ import { initializeApp } from "firebase/app";
 import {useEffect, useState} from 'react';
 import {getAuth,onAuthStateChanged, updateProfile} from 'firebase/auth';
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import {getFirestore} from 'firebase/firestore';
+import {addDoc,collection,deleteDoc,doc,onSnapshot,orderBy,query,setDoc,where,getDocs} from 'firebase/firestore';
 const firebaseConfig = {
-  apiKey: "AIzaSyBGJF0Euus_QZBTH4bsAie6cy0zZrhzK38",
-  authDomain: "emailauthentication-f9e8f.firebaseapp.com",
-  projectId: "emailauthentication-f9e8f",
-  storageBucket: "emailauthentication-f9e8f.appspot.com",
-  messagingSenderId: "804336942274",
-  appId: "1:804336942274:web:35f6025e564faf715ecf5b"
+  apiKey: "AIzaSyDknp6srfSt25U5HBW8XNcI4_ulz7FKXyg",
+  authDomain: "new-db-de139.firebaseapp.com",
+  projectId: "new-db-de139",
+  storageBucket: "new-db-de139.appspot.com",
+  messagingSenderId: "618125316250",
+  appId: "1:618125316250:web:59790395e341b709d6cf23"
 };
 
 
@@ -24,7 +26,6 @@ export function useGetCurrentUser(){
     const unsub = onAuthStateChanged(auth, user => setCurrentUser(user));
     return unsub;
   },[])
-  console.log(currentUser);
  return currentUser; 
 }
 
@@ -38,4 +39,32 @@ export async function uploadProfilePhoto(file,currentUser){
 
 export function updateProfileDetails(name,currentUser){
   updateProfile(currentUser,{displayName:name})
+}
+
+//Adding to Document in Firestore
+export const db = getFirestore();
+const dbName = 'ExpenseDetails';
+export function updateDetailsInDB(uid,productName,productPrice,productId){
+  addDoc(collection(db,dbName),{uid,productName,productPrice,productId});
+}
+
+
+//Deleting Document from firestore
+export async function deleteDetailsInDB(serverId){
+  await deleteDoc(doc(db,dbName,serverId));
+}
+
+export async function getExpenseDetails(uid){
+  let expenseDetailsFromDB = [];
+  const queryString = query(collection(db,dbName),where("uid","==",uid));
+  
+  const expDetails = await getDocs(queryString);
+  for(const expenseDetail of expDetails.docs){
+    const detail = expenseDetail.data();
+    detail.serverId = expenseDetail.id;
+   expenseDetailsFromDB.push(detail);
+  }
+  return expenseDetailsFromDB;
+  
+
 }

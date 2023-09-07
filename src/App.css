@@ -67,7 +67,56 @@
     font-weight: 600;
     font-size: 15px;
     cursor: pointer;
-    margin: 100px;
+    margin-left: 80%;
+}
+.expenseAdder{
+  display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid #b2956f;
+    background-color: antiquewhite;
+    margin-top: 2%;
+    width: 70%;
+    margin-left: 14%;
+    padding: 10px;
+    border-radius: 5px;
+}
+.expenseInputField{
+  border: 1.5px solid #b2956f;
+    border-radius: 5px;
+    height: 28px;
+    width: 130%;
+    text-align: center;
+}
+.expenseAdderButton{
+  border: 2px solid #b2956f;
+    width: 140%;
+    height: 28px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}
+.expenseButton{
+  border: 2px solid #b2956f;
+    height: 28px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}
+.expenseAdderContainer{
+  border: 2px solid #b2956f;
+    margin-top: 20px;
+    width: 71.6%;
+    margin-left: 14%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    list-style: none;
+    flex-direction: column;
 }
 .loginLink{
   color: blue;
