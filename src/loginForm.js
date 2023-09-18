@@ -1,20 +1,18 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import {database} from './firebaseConfig';
-import {signInWithEmailAndPassword} from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+//import {signInWithEmailAndPassword} from 'firebase/auth';
+import { useSelector,useDispatch} from 'react-redux';
+import { authActions } from './redux/redux';
+//import { useNavigate } from 'react-router-dom';
 const Loginfiller = () => {
-    const history = useNavigate();
+    const dispatch = useDispatch();
+    
     const handleLogin = (e) => {
         e.preventDefault();
-        const email = e.target.email.value;
+        const email = e.target.email.value; 
         const password = e.target.password.value;
-        signInWithEmailAndPassword(database,email,password).then(data => {
-            debugger
-            history('/home');
-        }).catch(err => {
-            alert(err.message);
-        })
+        dispatch(authActions.handleLogin(database,email,password));
     }
   return (
     <div>
