@@ -1,10 +1,10 @@
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
-import './App.css';
-import Home from './Home';
-import RegisterForm from './registerForm';
-import Loginfiller from './loginForm';
-import ForgotPassword from './forgotPassword';
-import ProfileUpdate from './profileUpdate';
+import './styles/App.css';
+import Home from './components/Home';
+import RegisterForm from './components/registerForm';
+import Loginfiller from './components/loginForm';
+import ForgotPassword from './components/forgotPassword';
+import ProfileUpdate from './components/profileUpdate';
 function App() {
   return (
     <BrowserRouter>
